@@ -1,0 +1,5 @@
+﻿<Directivesx>
+    <Application>
+        <Assembly Name="Coplt.ShaderReflections.Dxc" Dynamic="Required All" />
+    </Application>
+</Directivesx>

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coplt.ShaderReflections", "Coplt.ShaderReflections\Coplt.ShaderReflections.csproj", "{E0FA1B01-5F21-44B3-9419-98CBEDD17B9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coplt.ShaderReflections.Dxc", "Coplt.ShaderReflections.Dxc\Coplt.ShaderReflections.Dxc.csproj", "{FB8AFF01-90B5-4764-9706-D9D4904FB21E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0FA1B01-5F21-44B3-9419-98CBEDD17B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0FA1B01-5F21-44B3-9419-98CBEDD17B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0FA1B01-5F21-44B3-9419-98CBEDD17B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0FA1B01-5F21-44B3-9419-98CBEDD17B9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB8AFF01-90B5-4764-9706-D9D4904FB21E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB8AFF01-90B5-4764-9706-D9D4904FB21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB8AFF01-90B5-4764-9706-D9D4904FB21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB8AFF01-90B5-4764-9706-D9D4904FB21E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
