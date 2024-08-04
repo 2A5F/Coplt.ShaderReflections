@@ -3,35 +3,48 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net8.0</TargetFramework>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Coplt.ShaderReflections.Dx</RootNamespace>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <PublishAot>true</PublishAot>
         <Platform>x64</Platform>
+		<Version>0.1.0</Version>
+		<PackageProjectUrl>https://github.com/2A5F/Coplt.ShaderReflections</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/2A5F/Coplt.ShaderReflections</RepositoryUrl>
+		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Coplt.ShaderReflections\Coplt.ShaderReflections.csproj"/>
+        <ProjectReference Include="..\Coplt.ShaderReflections\Coplt.ShaderReflections.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Direct3D.DXC" Version="1.8.2407.12" GeneratePathProperty="true"/>
-        <PackageReference Include="Silk.NET.Direct3D.Compilers" Version="2.21.0"/>
-        <PackageReference Include="Silk.NET.Direct3D12" Version="2.21.0"/>
-        <PackageReference Include="Spectre.Console" Version="0.49.1"/>
-        <PackageReference Include="CommandLineParser" Version="2.9.1"/>
+        <PackageReference Include="Microsoft.Direct3D.DXC" Version="1.8.2407.12" GeneratePathProperty="true" />
+        <PackageReference Include="Silk.NET.Direct3D.Compilers" Version="2.21.0" />
+        <PackageReference Include="Silk.NET.Direct3D12" Version="2.21.0" />
+        <PackageReference Include="Spectre.Console" Version="0.49.1" />
+        <PackageReference Include="CommandLineParser" Version="2.9.1" />
         <PackageReference Include="Spectre.Console.Json" Version="0.49.1" />
     </ItemGroup>
 
     <ItemGroup>
-        <RdXmlFile Include="rd.xml"/>
-        <DirectPInvoke Include="dxcompiler" Visible="false"/>
+        <RdXmlFile Include="rd.xml" />
+        <DirectPInvoke Include="dxcompiler" Visible="false" />
     </ItemGroup>
 
     <ItemGroup>
         <None Include="$(PkgMicrosoft_Direct3D_DXC)\build\native\bin\x64\dxcompiler.dll">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\LICENSE.md">
+          <Pack>True</Pack>
+          <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\README.md">
+          <Pack>True</Pack>
+          <PackagePath>\</PackagePath>
         </None>
     </ItemGroup>
 </Project>
