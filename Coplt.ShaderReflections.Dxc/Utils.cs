@@ -73,34 +73,34 @@ public static class Utils
         _ => ShaderResourceFlags.None,
     };
 
-    public static ShaderSrvStorage ToShaderSrvStorage(this D3DResourceReturnType type) => type switch
+    public static ShaderTexStorage ToShaderTexStorage(this D3DResourceReturnType type) => type switch
     {
-        D3DResourceReturnType.D3DReturnTypeUnorm => ShaderSrvStorage.UNorm,
-        D3DResourceReturnType.D3DReturnTypeSNorm => ShaderSrvStorage.SNorm,
-        D3DResourceReturnType.D3DReturnTypeSint => ShaderSrvStorage.SInt,
-        D3DResourceReturnType.D3DReturnTypeUint => ShaderSrvStorage.UInt,
-        D3DResourceReturnType.D3DReturnTypeFloat => ShaderSrvStorage.Float,
-        D3DResourceReturnType.D3DReturnTypeMixed => ShaderSrvStorage.Mixed,
-        D3DResourceReturnType.D3DReturnTypeDouble => ShaderSrvStorage.Double,
-        D3DResourceReturnType.D3DReturnTypeContinued => ShaderSrvStorage.Continued,
-        _ => ShaderSrvStorage.Unknown,
+        D3DResourceReturnType.D3DReturnTypeUnorm => ShaderTexStorage.UNorm,
+        D3DResourceReturnType.D3DReturnTypeSNorm => ShaderTexStorage.SNorm,
+        D3DResourceReturnType.D3DReturnTypeSint => ShaderTexStorage.SInt,
+        D3DResourceReturnType.D3DReturnTypeUint => ShaderTexStorage.UInt,
+        D3DResourceReturnType.D3DReturnTypeFloat => ShaderTexStorage.Float,
+        D3DResourceReturnType.D3DReturnTypeMixed => ShaderTexStorage.Mixed,
+        D3DResourceReturnType.D3DReturnTypeDouble => ShaderTexStorage.Double,
+        D3DResourceReturnType.D3DReturnTypeContinued => ShaderTexStorage.Continued,
+        _ => ShaderTexStorage.Unknown,
     };
 
-    public static ShaderSrvDimension ToShaderSrvDimension(this D3DSrvDimension dimension) =>
+    public static ShaderResDimension ToShaderTexDimension(this D3DSrvDimension dimension) =>
         dimension switch
         {
-            D3DSrvDimension.D3DSrvDimensionBuffer => ShaderSrvDimension.Buffer,
-            D3DSrvDimension.D3DSrvDimensionTexture1D => ShaderSrvDimension.Texture1D,
-            D3DSrvDimension.D3DSrvDimensionTexture1Darray => ShaderSrvDimension.Texture1DArray,
-            D3DSrvDimension.D3DSrvDimensionTexture2D => ShaderSrvDimension.Texture2D,
-            D3DSrvDimension.D3DSrvDimensionTexture2Darray => ShaderSrvDimension.Texture2DArray,
-            D3DSrvDimension.D3DSrvDimensionTexture2Dms => ShaderSrvDimension.Texture2DMs,
-            D3DSrvDimension.D3DSrvDimensionTexture2Dmsarray => ShaderSrvDimension.Texture2DArrayMs,
-            D3DSrvDimension.D3DSrvDimensionTexture3D => ShaderSrvDimension.Texture3D,
-            D3DSrvDimension.D3DSrvDimensionTexturecube => ShaderSrvDimension.TextureCube,
-            D3DSrvDimension.D3DSrvDimensionTexturecubearray => ShaderSrvDimension.TextureCubeArray,
-            D3DSrvDimension.D3DSrvDimensionBufferex => ShaderSrvDimension.BufferEx,
-            _ => ShaderSrvDimension.Unknown,
+            D3DSrvDimension.D3DSrvDimensionBuffer => ShaderResDimension.Buffer,
+            D3DSrvDimension.D3DSrvDimensionTexture1D => ShaderResDimension.Texture1D,
+            D3DSrvDimension.D3DSrvDimensionTexture1Darray => ShaderResDimension.Texture1DArray,
+            D3DSrvDimension.D3DSrvDimensionTexture2D => ShaderResDimension.Texture2D,
+            D3DSrvDimension.D3DSrvDimensionTexture2Darray => ShaderResDimension.Texture2DArray,
+            D3DSrvDimension.D3DSrvDimensionTexture2Dms => ShaderResDimension.Texture2DMs,
+            D3DSrvDimension.D3DSrvDimensionTexture2Dmsarray => ShaderResDimension.Texture2DArrayMs,
+            D3DSrvDimension.D3DSrvDimensionTexture3D => ShaderResDimension.Texture3D,
+            D3DSrvDimension.D3DSrvDimensionTexturecube => ShaderResDimension.TextureCube,
+            D3DSrvDimension.D3DSrvDimensionTexturecubearray => ShaderResDimension.TextureCubeArray,
+            D3DSrvDimension.D3DSrvDimensionBufferex => ShaderResDimension.BufferEx,
+            _ => ShaderResDimension.Unknown,
         };
 
     public static ShaderVectorComponentType ToShaderVectorComponentType(this D3DRegisterComponentType type) =>

@@ -223,10 +223,10 @@ internal static unsafe class App
         SilkMarshal.ThrowHResult(reflection.GetResourceBindingDesc(i, &desc));
 
         var texture = desc.ReturnType != D3DResourceReturnType.None || desc.NumSamples != 0 || desc.Dimension != 0
-            ? new ShaderSrvBindMeta
+            ? new ShaderTexBindMeta
             {
-                Storage = desc.ReturnType.ToShaderSrvStorage(),
-                Dimension = desc.Dimension.ToShaderSrvDimension(),
+                Storage = desc.ReturnType.ToShaderTexStorage(),
+                Dimension = desc.Dimension.ToShaderTexDimension(),
                 NumSamples = desc.NumSamples,
             }
             : null;
@@ -238,7 +238,7 @@ internal static unsafe class App
             Point = desc.BindPoint,
             Count = desc.BindCount,
             Space = desc.Space,
-            Srv = texture,
+            Tex = texture,
             Exts =
             [
                 new Dx12ShaderBindMetaExt

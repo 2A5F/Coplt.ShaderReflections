@@ -9,7 +9,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <PublishAot>true</PublishAot>
         <Platform>x64</Platform>
-		<Version>0.2.0</Version>
+		<Version>0.3.0</Version>
 		<PackageProjectUrl>https://github.com/2A5F/Coplt.ShaderReflections</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/2A5F/Coplt.ShaderReflections</RepositoryUrl>

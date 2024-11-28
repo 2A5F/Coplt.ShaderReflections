@@ -119,7 +119,7 @@ public record ShaderBindMeta
     public uint Count { get; set; }
     public uint Space { get; set; }
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    public ShaderSrvBindMeta? Srv { get; set; }
+    public ShaderTexBindMeta? Tex { get; set; }
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public ShaderBindMetaExt[]? Exts { get; set; }
 }
@@ -134,10 +134,10 @@ public record Dx12ShaderBindMetaExt : ShaderBindMetaExt
     public uint Flags { get; set; }
 }
 
-public record ShaderSrvBindMeta
+public record ShaderTexBindMeta
 {
-    public ShaderSrvStorage Storage { get; set; }
-    public ShaderSrvDimension Dimension { get; set; }
+    public ShaderTexStorage Storage { get; set; }
+    public ShaderResDimension Dimension { get; set; }
     public uint NumSamples { get; set; }
 }
 
@@ -183,8 +183,8 @@ public enum ShaderResourceFlags
     FeedbackTexture = 1 << 21,
 }
 
-[JsonConverter(typeof(JsonStringEnumConverter<ShaderSrvDimension>))]
-public enum ShaderSrvDimension
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderResDimension>))]
+public enum ShaderResDimension
 {
     Unknown,
     Buffer,
@@ -200,8 +200,8 @@ public enum ShaderSrvDimension
     BufferEx,
 }
 
-[JsonConverter(typeof(JsonStringEnumConverter<ShaderSrvStorage>))]
-public enum ShaderSrvStorage
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderTexStorage>))]
+public enum ShaderTexStorage
 {
     Unknown,
     UNorm,
