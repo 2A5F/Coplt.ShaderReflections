@@ -1,7 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Runtime.InteropServices;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Coplt.ShaderReflections;
 
+// ReSharper disable NonReadonlyMemberInGetHashCode
 public record ShaderMeta
 {
     public ShaderStage Stage { get; set; }
@@ -40,14 +43,15 @@ public record Dx12ShaderMetaExt : ShaderMetaExt
     public bool IsSampleFrequencyShader { get; set; }
 }
 
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderStage>))]
 public enum ShaderStage
 {
     Other,
     Compute,
     Pixel,
+    Vertex,
     Mesh,
     Task,
-    Vertex,
     Library,
 }
 
@@ -138,6 +142,7 @@ public record ShaderSrvBindMeta
 }
 
 [Flags]
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderResourceFlags>))]
 public enum ShaderResourceFlags
 {
     None,
@@ -178,6 +183,7 @@ public enum ShaderResourceFlags
     FeedbackTexture = 1 << 21,
 }
 
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderSrvDimension>))]
 public enum ShaderSrvDimension
 {
     Unknown,
@@ -194,6 +200,7 @@ public enum ShaderSrvDimension
     BufferEx,
 }
 
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderSrvStorage>))]
 public enum ShaderSrvStorage
 {
     Unknown,
@@ -226,6 +233,7 @@ public record ShaderParam
 }
 
 [Flags]
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderVectorMask>))]
 public enum ShaderVectorMask : byte
 {
     x = 1 << 0,
@@ -248,6 +256,7 @@ public enum ShaderVectorMask : byte
     xyzw = x | y | z | w,
 }
 
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderVectorComponentType>))]
 public enum ShaderVectorComponentType : byte
 {
     Unknown,
@@ -256,6 +265,7 @@ public enum ShaderVectorComponentType : byte
     Float32,
 }
 
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderSemantic>))]
 public enum ShaderSemantic
 {
     Undefined,
@@ -287,6 +297,7 @@ public enum ShaderSemantic
     InnerCoverage,
 }
 
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderMinPrecision>))]
 public enum ShaderMinPrecision
 {
     Default,
@@ -315,6 +326,7 @@ public record ShaderTypeDef
     public string[]? Members { get; set; }
 }
 
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderTypeKind>))]
 public enum ShaderTypeKind
 {
     Scalar,
@@ -328,6 +340,7 @@ public enum ShaderTypeKind
     DWord,
 }
 
+[JsonConverter(typeof(JsonStringEnumConverter<ShaderVarType>))]
 public enum ShaderVarType
 {
     Unknown,
